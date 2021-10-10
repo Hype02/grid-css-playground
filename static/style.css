@@ -1,0 +1,9 @@
+#gameCanvas{
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+}
+
+body{
+    margin: 0;
+}
