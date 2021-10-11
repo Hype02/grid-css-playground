@@ -16,34 +16,34 @@
 
 
   <script>
+   
+ class Axios{
+   
+       async get(url ){
+       const res = await fetch(url, {
+         method: 'GET',
+         headers:{
+           'Content-Type':'application/json'
+         }
+       })
 
-    let videoOne = new Promise((res, rej)=>{
-        res(true)
-    })
+       console.log(res.body.getReader().read().)
 
-    let videoTwo = new Promise((res, rej)=>{
-        res(true)
-    })
+       return JSON.stringify(res.body)
+        
+          
+     }
+   }
 
-    let videoThree = new Promise((res, rej)=>{
-        res(true)
-    })
-
-    Promise.all([
-      videoOne,
-      videoTwo,
-      videoThree
-    ]).then(data=>{
-      console.log("ok")
-    }).catch((err)=>{
-      console.log("err")
-    })
+   var axios = new Axios()
 
 
-
-
-
-    
+   const func = async () =>{
+    const result = await axios.get("https://api.ipify.org?format=json")
+    console.log("result: " + result)
+   }
+   func()
+ 
    
 
   </script>
