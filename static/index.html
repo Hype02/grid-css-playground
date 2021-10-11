@@ -13,5 +13,64 @@
   <canvas id="gameCanvas">
 
   </canvas>
+
+
+  <script>
+
+        var snakeX = 0
+        var snakeY = 0
+
+        var snakeSize = 25
+
+        var snakeLength = 1
+
+      const canvas = document.getElementById('gameCanvas')
+
+      const ctx = canvas.getContext('2d')
+     
+
+      ctx.beginPath()
+      ctx.rect(canvas.clientWidth/2, canvas.clientHeight/2, snakeSize, snakeSize)
+      ctx.fillStyle="#ff0000"
+      ctx.fill()
+      
+      ctx.closePath()
+
+
+   document.addEventListener('keypress', (e)=>{
+       console.log(e)
+       if(e.key == 'a'){
+            snakeX-=25;
+       }
+       else if(e.key == 'd'){
+        snakeX+=25;
+       }
+       else if(e.key == 's'){
+        snakeY-=25;
+       }
+       else if(e.key == 'w'){
+        snakeX+=25;
+       }
+     
+   })
+
+    setInterval(()=>{
+        draw()
+    }, 1)
+
+   const draw = () =>{
+
+
+       ctx.beginPath()
+
+       ctx.clearRect(0, 0, canvas.innerWidth, canvas.innerHeight)
+        ctx.rect(snakeX, snakeY, snakeSize, snakeSize)
+        ctx.fillStyle = "#ffbbcc"
+        ctx.fill()
+       ctx.closePath()
+   }
+   
+
+  </script>
 </body>
 </html>
